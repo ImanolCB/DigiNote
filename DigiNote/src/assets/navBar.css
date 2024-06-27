@@ -1,0 +1,16 @@
+.menu-content {
+    background-color: white;
+    color: #333; /* Cambiar según tus necesidades */
+    padding: 10px;
+    margin-top: -100%; /* Comienza oculto arriba */
+    animation: slideDown 0.5s ease forwards; /* Animación de desplazamiento hacia abajo */
+  }
+  
+  @keyframes slideDown {
+    0% {
+      margin-top: -105%; /* Oculto arriba */
+    }
+    100% {
+      margin-top: 10px; /* Visible abajo */
+    }
+  }
