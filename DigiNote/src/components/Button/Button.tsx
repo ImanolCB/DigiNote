@@ -15,7 +15,7 @@ export default function Button(
       type={type}
       name={name}
       value={value}
-      className={ `text-white bg-sky-500 hover:bg-white/30 hover:text-gray-800 px-4 py-2 border border-sky-500 rounded-lg transition duration-500 ${state ? '' : 'block w-full text-left'}` }
+      className={ `text-white bg-sky-500 hover:bg-white/60 hover:text-gray-800 px-4 py-2 border border-sky-500 rounded-lg transition duration-500 ${state ? '' : 'block w-full text-left'}` }
     >
       {content}
     </button>
