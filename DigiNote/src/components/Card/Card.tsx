@@ -15,12 +15,16 @@
 
 import ImageResponsive from "../ImageResponsive/ImageResponsive";
 
+// import ImageResponsive from "../ImageResponsive/ImageResponsive";
+
   interface ICard{
     title: string,
     description?: string,
     imageSrc?: string,
     imageAlt?: string,
     href?: string,
+    buttonValue: string,
+    visibilityButton?: boolean,
   }
 
 
@@ -33,41 +37,34 @@ import ImageResponsive from "../ImageResponsive/ImageResponsive";
 //       href: '#',
 //     }
   
-  export default function Card({title, description , imageSrc , imageAlt, href}:ICard) {
+  export default function Card({title, description , imageSrc='' , imageAlt, href = '', buttonValue, visibilityButton = true}:ICard) {
     return (
-      
-      
-      <div className="">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-6 sm:py-14 lg:max-w-none lg:py-24">
-            <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-  
-            <div className="mt-6 space-y-12 lg:grid  lg:gap-x-6 lg:space-y-0 ">
-              {/* {callouts.map((callout) => ( */}
-                <div key={title} className="group relative">
-                  <div className="relative w-full overflow-hidden rounded-lg bg-white  sm:aspect-w-2  lg:aspect-w-1 group-hover:opacity-75 ">
-                    <ImageResponsive
-                      src={imageSrc}
-                      alt={imageAlt}
-                      className="w-24 md:w-32 lg:w-48"
-                    />
-                  </div>
-                  <h3 className="mt-6 text-sm text-gray-500">
-                    <a href={href}>
-                      {/* <span className="absolute inset-0" /> */}
-                      {title}
-                    </a>
-                  </h3>
-                  <p className="text-base font-semibold text-gray-900">{description}</p>
-                </div>
-              {/* )) */}
-              {/* } */}
-            </div>
-          </div>
-        </div>
+      <div className="relative m-auto flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 grayscale transition-all duration-300 hover:grayscale-0">
+         {imageSrc === '' 
+            ? <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-gray-500 bg-clip-border text-white shadow-lg shadow-gray-500/40 bg-gradient-to-b from-white to-sky-600" />
+            : <ImageResponsive src={imageSrc} alt={imageAlt} className="relative mx-4 -mt-8 h-40 overflow-hidden rounded-xl" />
+         }
+         
+         <div className="p-6">
+           <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+            {title}
+           </h5>
+           <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+           {description} 
+           </p>
+         </div>
+         <div className="p-6 pt-0">
+          {visibilityButton && href != ''
+            ?
+            <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-sky-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+             {buttonValue}
+           </button>
+            : ''
+          }
+           
+         </div>
       </div>
-
-      
+    
     )
   }
   
