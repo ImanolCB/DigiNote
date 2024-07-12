@@ -10,7 +10,7 @@ export default function ImageResponsive( {src = '', alt = '', className = ''}:IR
 
   return (
     <>
-        <div className={`m-auto  overflow-hidden object-cover pointer-events-none ${className}`}>
+        <div className={`m-auto sm:w-full overflow-hidden object-cover pointer-events-none ${className}`}>
             <img
             src={src}
             alt={alt}
