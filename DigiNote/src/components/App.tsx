@@ -1,5 +1,5 @@
 import Footer from "./Footer/Footer";
-import Home from "./Home/Home";
+import Home from "../pages/Home";
 import NavBar from "./NavBar/NavBar";
 
 

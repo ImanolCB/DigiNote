@@ -1,8 +1,8 @@
-import chatImg from './../../assets/img/chat.svg';
-import linkImg from './../../assets/img/links.svg';
-import ilustration from './../../../public/home_ilustration.svg';
-import Card from "../Card/Card";
-import ImageResponsive from "../ImageResponsive/ImageResponsive";
+import chatImg from './../assets/img/chat.svg';
+import linkImg from './../assets/img/links.svg';
+import ilustration from './../../public/home_ilustration.svg';
+import Card from "../components/Card/Card";
+import ImageResponsive from "../components/ImageResponsive/ImageResponsive";
 
 export default function Home() {
   return (
